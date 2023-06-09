@@ -16,7 +16,7 @@ public abstract class CharacterBase : MonoBehaviour
     protected Animator animator;
 
     [Header("Properties")]
-    [SerializeField] protected float maxHealth;
+    [SerializeField] protected float maxHealth; // ToDo: Seperate into health component.
     [SerializeField] protected float currentHealth;
     [SerializeField] protected float movementSpeed = 2;
 
