@@ -12,6 +12,7 @@ public class CharacterController : MonoBehaviour
     private CharacterBase character;
 
     private Vector3 movementVector = new Vector3();
+    private Vector3 shotDirection = new Vector3(1, 0, 0);
 
     private void Awake()
     {
@@ -30,13 +31,24 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         Move();
+
+        // Ensure directional weapons are always heading in direction of movement.
+        if(movementVector != Vector3.zero)
+            shotDirection = movementVector;
+    
     }
+
 
     private void Move()
     {
         movementVector.x = floatingJoystick.Horizontal * character.GetMovementSpeed();
         movementVector.y = floatingJoystick.Vertical * character.GetMovementSpeed();   
         rb2D.velocity = movementVector;
+    }
+
+    public Vector3 GetShotDirection()
+    {
+        return shotDirection;
     }
 
 }
