@@ -1,18 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserPistol : MonoBehaviour
+// Laser Pistol fires in the direction the player is moving.
+// Evolved - Laser Rifle fires multiple shots in the direction the player is moving.
+public class LaserPistol : WeaponBase
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [Header("Components")]
+    [SerializeField] private Projectile projectileToSpawn;
+    private CharacterController character;
+    
+    [Header("Properties")]
+    [SerializeField] private Transform projectileSpawnLocation;
+
+    // ToDo
+    /*
+    [Header("Evolved")]
+    [SerializeField] private bool isEvolved = false;
+    [SerializeField] private float evolvedFireRate = 0.5f;
+    */
+
+    protected override void Start()
     {
-        
+        base.Start();
+        character = GetComponentInParent<CharacterController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void SpawnProjectile()
     {
-        
+        Projectile spawnedProjectile = Instantiate(projectileToSpawn, projectileSpawnLocation.position, projectileSpawnLocation.rotation);
+        spawnedProjectile.SetShotDirection(character.GetShotDirection());
+    }
+
+    protected override void Attack()
+    {
+        SpawnProjectile();
     }
 }
