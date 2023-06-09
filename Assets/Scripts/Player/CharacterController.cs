@@ -35,8 +35,7 @@ public class CharacterController : MonoBehaviour
     private void Move()
     {
         movementVector.x = floatingJoystick.Horizontal * character.GetMovementSpeed();
-        movementVector.y = floatingJoystick.Vertical * character.GetMovementSpeed();
-        movementVector.Normalize();
+        movementVector.y = floatingJoystick.Vertical * character.GetMovementSpeed();   
         rb2D.velocity = movementVector;
     }
 
