@@ -8,15 +8,19 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public abstract class CharacterBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [Header("Components")]
+    protected Rigidbody2D rigidBody2D;
+    protected BoxCollider2D boxCollider2D;
+    protected SpriteRenderer spriteRenderer;
+    protected Animator animator;
+
+    protected virtual void Awake()
     {
-        
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        rigidBody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
