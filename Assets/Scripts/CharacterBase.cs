@@ -34,6 +34,27 @@ public abstract class CharacterBase : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    protected virtual void Update()
+    {
+    }
+
+    public float GetMovementSpeed()
+    {
+        return movementSpeed;
+    }
+
+    /// <summary>
+    /// Change value of character's movement speed.
+    /// </summary>
+    /// <param name="newSpeed">Value to be sent to movement speed</param>
+    /// <param name="replace">True - newSpeed is the new value of movement speed. False - newSpeed is added to movementSpeed</param>
+    public void SetMovementSpeed(float newSpeed, bool replace)
+    {
+        if (replace)
+            movementSpeed = newSpeed;
+        else
+            movementSpeed += newSpeed;
+    }
 
 
 
