@@ -15,6 +15,11 @@ public abstract class CharacterBase : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
 
+    [Header("Properties")]
+    [SerializeField] protected float maxHealth;
+    [SerializeField] protected float currentHealth;
+    [SerializeField] protected float movementSpeed = 2;
+
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
@@ -22,5 +27,15 @@ public abstract class CharacterBase : MonoBehaviour
         boxCollider2D = GetComponent<BoxCollider2D>();
         rigidBody2D = GetComponent<Rigidbody2D>();
     }
+
+    protected virtual void Start()
+    {
+        rigidBody2D.isKinematic = true;
+        currentHealth = maxHealth;
+    }
+
+
+
+
 
 }
