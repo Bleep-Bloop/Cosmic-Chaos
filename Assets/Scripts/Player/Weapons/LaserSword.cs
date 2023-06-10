@@ -3,28 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class LaserSword : WeaponBase
+public class LaserSword : MonoBehaviour
 {
 
     private Animator anim;
+    private readonly int SwingAnimationHash = Animator.StringToHash("LaserSwordSwing");
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
-         anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    override protected void Start()
+    protected void Start()
     {
-        base.Start();
         SetInActive();
     }
 
-    protected override void Attack()
+    public void Attack()
     {
         gameObject.SetActive(true);
-        anim.Play("LaserSwordSwing");
+        spriteRenderer.enabled = true;
+        anim.Play(SwingAnimationHash);
     }
 
+    // Called from animation event to deactivate after swing. (ToDo: Sprite Renderer still active.
+    public void SetInActive()
+    {
+        
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("LaserSwordSwing"))
+        {
+            // Call function if mid animation to prevent movement direction cancelling swing.
+            Invoke("SetInActive", 0.5f);
+        }
+
+        spriteRenderer.enabled = false;
+        gameObject.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -32,11 +48,6 @@ public class LaserSword : WeaponBase
         {
             Debug.Log("Enemy Hit");
         }
-    }
-
-    public void SetInActive()
-    {
-        gameObject.SetActive(false);
     }
 
 }
