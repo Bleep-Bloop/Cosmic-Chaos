@@ -688,6 +688,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1148623515}
     m_Modifications:
+    - target: {fileID: 1393341045749089156, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: m_Name
+      value: LeftLaserSword
+      objectReference: {fileID: 0}
     - target: {fileID: 1393341047295761807, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -734,7 +738,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1393341047295761808, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
       propertyPath: m_Name
-      value: LightSwordHolder
+      value: LasertSwordHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047313808843, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: m_Name
+      value: RightLaserSword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
