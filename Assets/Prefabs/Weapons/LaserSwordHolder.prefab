@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1393341045749089153}
   - component: {fileID: 1393341045749089154}
   m_Layer: 0
-  m_Name: LeftLightSword
+  m_Name: LeftLaserSword
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1393341047295761807}
   - component: {fileID: 1393341047295761806}
   m_Layer: 3
-  m_Name: LightSwordHolder
+  m_Name: LaserSwordHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 1393341047313808839}
   - component: {fileID: 1393341047313808838}
   m_Layer: 0
-  m_Name: RightLightSword
+  m_Name: RightLaserSword
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
