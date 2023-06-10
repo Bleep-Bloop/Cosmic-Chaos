@@ -56,7 +56,4 @@ public abstract class CharacterBase : MonoBehaviour
             movementSpeed += newSpeed;
     }
 
-
-
-
 }
