@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerHealthManager : MonoBehaviour
 {
+
+    public static PlayerHealthManager instance;
+
     // Start is called before the first frame update
     void Start()
     {
