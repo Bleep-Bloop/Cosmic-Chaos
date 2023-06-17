@@ -14,14 +14,17 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
     [Header("Properties")]
-    [SerializeField] protected float health;
+    [SerializeField] protected float baseHealth;
+    [SerializeField] protected float currentHealth;
     [SerializeField] protected float movementSpeed;
     [SerializeField] protected float damageAmount;
-    [SerializeField] protected float timeBetweenHits = 0.1f; // Time the enemy spends retreating after a hit
+    [SerializeField] protected float timeBetweenHits = 0.1f; // Time before calling damage again while maintaining contact.
+    protected float knockBackTime = 0.5f; // Time enemy is pushed away for (Set through TakeDamage(), passed by DamageEnemyZone).
 
     [Header("Runtime")]
     protected Transform playerCharacter;
     private float hitCountTimer;
+    private float knockBackCounter;
 
 
     private void Awake()
@@ -37,6 +40,8 @@ public class EnemyBase : MonoBehaviour
     {
         // ToDo: Get reference from GameManager Singleton when added.
         playerCharacter = GameObject.FindGameObjectWithTag("Player").transform;
+        currentHealth = baseHealth;
+
     }
 
     // Update is called once per frame
@@ -44,7 +49,21 @@ public class EnemyBase : MonoBehaviour
     {
         if (PlayerHealthManager.instance.gameObject.activeSelf == true)
         {
-           
+            if(knockBackCounter > 0)
+            {
+                knockBackCounter -= Time.deltaTime;
+
+                if(movementSpeed > 0)
+                {
+                    movementSpeed -= movementSpeed * 2.0f;
+                }
+
+                if(knockBackCounter <= 0)
+                {
+                    movementSpeed = Mathf.Abs(movementSpeed * 0.5f);
+                }
+            }
+
             rigidBody2D.velocity = (playerCharacter.position - transform.position).normalized * movementSpeed;
 
             // If enemy hit player begin timeBetweenAttacks countdown
@@ -57,7 +76,6 @@ public class EnemyBase : MonoBehaviour
         {
             rigidBody2D.velocity = Vector2.zero;
         }
-
 
     }
 
@@ -86,5 +104,30 @@ public class EnemyBase : MonoBehaviour
             hitCountTimer = timeBetweenHits;
         }
     }
+
+    /// <summary>
+    /// Subtracts Enemy's currentHealth by damageTaken.
+    /// Destroys if currentHealth <= 0.
+    /// </summary>
+    /// <param name="damageTaken">Number to be subtracted from currentHealth.</param>
+    /// <param name="knockBack">Enemy will be pushed away on damage.</param>
+    public void TakeDamage(float damageTaken, bool knocksBack, float currentKnockBackTime)
+    {
+
+        currentHealth -= damageTaken;
+
+        if(knocksBack)
+        {
+            knockBackTime = currentKnockBackTime;
+            knockBackCounter = knockBackTime;
+        }
+
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
 
 }
