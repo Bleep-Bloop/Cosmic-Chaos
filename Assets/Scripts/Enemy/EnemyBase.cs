@@ -43,6 +43,16 @@ public class EnemyBase : MonoBehaviour
 
         rigidBody2D.velocity = (playerCharacter.position - transform.position).normalized * movementSpeed;
 
-
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        // If collision object is on 'Player' layer
+        if (collision.gameObject.layer == 3)
+            Debug.Log("Player Hit");
+        
+    }
+
+
 }
