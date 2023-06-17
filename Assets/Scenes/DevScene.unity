@@ -272,7 +272,7 @@ MonoBehaviour:
   rigidBody2D: {fileID: 0}
   boxCollider2D: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  baseHealth: 5
+  baseHealth: 1
   currentHealth: 0
   movementSpeed: 1
   damageAmount: 2
