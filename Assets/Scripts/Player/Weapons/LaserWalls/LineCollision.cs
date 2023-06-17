@@ -29,7 +29,7 @@ public class LineCollision : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         colliderPoints = CalculateColliderPoints();
         polygonCollider2D.SetPath(0, colliderPoints.ConvertAll(p => (Vector2)transform.InverseTransformPoint(p))); // Points are in world space polygon collider uses local so we must...
