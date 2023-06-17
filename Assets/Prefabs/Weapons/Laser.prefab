@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2951653151952008237}
   - component: {fileID: 2951653151952008236}
-  - component: {fileID: 2951653151952008239}
+  - component: {fileID: 7838609560396276723}
+  - component: {fileID: 2312283302085346120}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -47,8 +48,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 2
---- !u!61 &2951653151952008239
-BoxCollider2D:
+--- !u!114 &7838609560396276723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951653151952008238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc58a0e50e8d6a645879bdfc784690cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  destroyOnDamage: 1
+  damageAmount: 1
+--- !u!58 &2312283302085346120
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -60,19 +78,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604645, y: -0.003407389}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.11407673, y: 0.10726184}
-  m_EdgeRadius: 0
+  m_Radius: 0.08
 --- !u!1 &2951653153039045114
 GameObject:
   m_ObjectHideFlags: 0
