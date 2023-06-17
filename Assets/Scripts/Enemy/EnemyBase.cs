@@ -16,9 +16,13 @@ public class EnemyBase : MonoBehaviour
     [Header("Properties")]
     [SerializeField] protected float health;
     [SerializeField] protected float movementSpeed;
-    
+    [SerializeField] protected float damageAmount;
+    [SerializeField] protected float timeBetweenHits = 0.1f; // Time the enemy spends retreating after a hit
+
     [Header("Runtime")]
     protected Transform playerCharacter;
+    private float hitCountTimer;
+
 
     private void Awake()
     {
@@ -38,14 +42,49 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidBody2D.velocity = (playerCharacter.position - transform.position).normalized * movementSpeed;
+        if (PlayerHealthManager.instance.gameObject.activeSelf == true)
+        {
+           
+            rigidBody2D.velocity = (playerCharacter.position - transform.position).normalized * movementSpeed;
+
+            // If enemy hit player begin timeBetweenAttacks countdown
+            if (hitCountTimer > 0f)
+            {
+                hitCountTimer -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            rigidBody2D.velocity = Vector2.zero;
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // If collision object is on 'Player' layer
-        if (collision.gameObject.layer == 3)
-            Debug.Log("Player Hit");
+        if (collision.gameObject.layer == 3 && hitCountTimer <= 0)
+        {
+            Debug.Log("[EnemyBase] Hit Player");
+            PlayerHealthManager.instance.TakeDamage(damageAmount);
+
+            hitCountTimer = timeBetweenHits;
+        }
+            
+    }
+
+    // Note - If enemy maintains contact this will need to be called.
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // If collision object is on 'Player' layer
+        if (collision.gameObject.layer == 3 && hitCountTimer <= 0)
+        {
+            Debug.Log("[EnemyBase] Hit Player (stay)");
+            PlayerHealthManager.instance.TakeDamage(damageAmount);
+
+            hitCountTimer = timeBetweenHits;
+        }
     }
 
 }
