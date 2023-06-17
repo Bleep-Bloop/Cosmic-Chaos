@@ -9,7 +9,7 @@ public class PlayerHealthManager : MonoBehaviour
     public static PlayerHealthManager instance;
 
     [Header("Components")]
-    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Slider healthBarSlider;
 
     [Header("Properties")]
     [SerializeField] private float maxHealth;
@@ -22,9 +22,48 @@ public class PlayerHealthManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+
+        healthBarSlider.maxValue = maxHealth;
+        healthBarSlider.value = currentHealth;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(5.0f);
+        }
     }
+
+    public void TakeDamage(float damageTaken)
+    {
+        currentHealth -= damageTaken;
+
+        UpdateHealthBar();
+
+        if(currentHealth <= 0)
+        {
+            Debug.Log("PLAYER DEAD");
+        }
+
+    }
+
+    public void HealHealth(float healthGained)
+    {
+
+        currentHealth += healthGained;
+
+        UpdateHealthBar();
+
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthBarSlider.value = currentHealth;
+    }
+
 }
