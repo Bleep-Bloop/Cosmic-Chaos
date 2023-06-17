@@ -163,7 +163,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!212 &176239668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   rigidBody2D: {fileID: 0}
   boxCollider2D: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  baseHealth: 1
+  baseHealth: 5
   currentHealth: 0
   movementSpeed: 1
   damageAmount: 2

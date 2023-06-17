@@ -63,8 +63,10 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  destroyOnDamage: 1
   damageAmount: 1
+  knocksBack: 1
+  knockBackAmount: 0.1
+  destroyOnDamage: 1
 --- !u!58 &2312283302085346120
 CircleCollider2D:
   m_ObjectHideFlags: 0
