@@ -41,13 +41,5 @@ public class LaserSword : MonoBehaviour
         spriteRenderer.enabled = false;
         gameObject.SetActive(false);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Enemy Hit");
-        }
-    }
 
 }

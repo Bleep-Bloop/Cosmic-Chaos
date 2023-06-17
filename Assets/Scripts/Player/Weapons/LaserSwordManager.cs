@@ -11,6 +11,11 @@ public class LaserSwordManager : WeaponBase
     [SerializeField] private LaserSword rightSword;
     private bool bIsFacingRight;
 
+    private void Awake()
+    {
+        character = GetComponentInParent<CharacterController>();
+    }
+
     protected override void Attack()
     {
         if(bIsFacingRight)
@@ -19,10 +24,6 @@ public class LaserSwordManager : WeaponBase
             leftSword.Attack();
     }
 
-    private void Awake()
-    {
-        character = GetComponentInParent<CharacterController>();
-    }
 
     override protected void Start()
     {
