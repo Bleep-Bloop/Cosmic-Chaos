@@ -33,12 +33,16 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // ToDo: Get reference from GameManager Singleton when added.
+        playerCharacter = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        rigidBody2D.velocity = (playerCharacter.position - transform.position).normalized * movementSpeed;
+
+
     }
 }
