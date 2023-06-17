@@ -14,7 +14,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
     [Header("Properties")]
-    [SerializeField] protected float health;
+    [SerializeField] protected float baseHealth;
+    [SerializeField] protected float currentHealth;
     [SerializeField] protected float movementSpeed;
     [SerializeField] protected float damageAmount;
     [SerializeField] protected float timeBetweenHits = 0.1f; // Time the enemy spends retreating after a hit
@@ -37,6 +38,8 @@ public class EnemyBase : MonoBehaviour
     {
         // ToDo: Get reference from GameManager Singleton when added.
         playerCharacter = GameObject.FindGameObjectWithTag("Player").transform;
+        currentHealth = baseHealth;
+
     }
 
     // Update is called once per frame
@@ -86,5 +89,17 @@ public class EnemyBase : MonoBehaviour
             hitCountTimer = timeBetweenHits;
         }
     }
+
+    public void TakeDamage(float damageTaken)
+    {
+
+        currentHealth -= damageTaken;
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
 
 }
