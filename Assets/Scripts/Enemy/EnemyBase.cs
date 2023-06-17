@@ -8,7 +8,6 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
 
-
     [Header("Components")]
     [SerializeField] protected Rigidbody2D rigidBody2D;
     [SerializeField] protected BoxCollider2D boxCollider2D;
@@ -17,10 +16,9 @@ public class EnemyBase : MonoBehaviour
     [Header("Properties")]
     [SerializeField] protected float health;
     [SerializeField] protected float movementSpeed;
-
+    
     [Header("Runtime")]
     protected Transform playerCharacter;
-
 
     private void Awake()
     {
@@ -40,19 +38,14 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         rigidBody2D.velocity = (playerCharacter.position - transform.position).normalized * movementSpeed;
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         // If collision object is on 'Player' layer
         if (collision.gameObject.layer == 3)
             Debug.Log("Player Hit");
-        
     }
-
 
 }
