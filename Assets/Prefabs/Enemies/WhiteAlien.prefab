@@ -52,7 +52,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   baseHealth: 1
   currentHealth: 0
-  movementSpeed: 1
+  movementSpeed: 0.3
   damageAmount: 2
   timeBetweenHits: 0.5
 --- !u!212 &6709627134226427202
