@@ -21,6 +21,7 @@ public class UpgradeManager : MonoBehaviour
     private CharacterBase playerCharacter;
     [SerializeField] private List<WeaponBase> allAvailableWeapons = new List<WeaponBase>(); // All weapon's attached to CharacterBase.
     [SerializeField] private List<WeaponBase> allActiveWeapons = new List<WeaponBase>(); // Attached weapons that are active.I may not need this, I can use inActive weapons to check for unlock them
+    private FloatingJoystick floatingJoystick;
 
     // Canvas/Panel for Upgrade UI
     [Header("Upgrade UI")]
@@ -38,6 +39,7 @@ public class UpgradeManager : MonoBehaviour
     void Start()
     {
         playerCharacter = PlayerHealthManager.instance.GetComponent<CharacterBase>();
+        floatingJoystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
 
         // Get attached weapons
         allAvailableWeapons = GetAllAvailableWeapons();
