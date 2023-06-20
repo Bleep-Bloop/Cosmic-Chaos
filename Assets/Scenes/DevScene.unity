@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &51907753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &468995626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -990,7 +990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allAvailableWeapons: []
-  allActiveWeapons: []
   UpgradeMenuCanvas: {fileID: 468995629}
   upgrade1Button: {fileID: 1615854010}
   upgrade2Button: {fileID: 1319065424}
@@ -998,6 +997,12 @@ MonoBehaviour:
   upgrade1TextBox: {fileID: 421791238}
   upgrade2TextBox: {fileID: 567184777}
   upgrade3TextBox: {fileID: 1089776982}
+  upgrade1Weapon: {fileID: 0}
+  upgrade2Weapon: {fileID: 0}
+  upgrade3Weapon: {fileID: 0}
+  upgrade1Type: 0
+  upgrade2Type: 0
+  upgrade3Type: 0
 --- !u!4 &1097040342
 Transform:
   m_ObjectHideFlags: 0
@@ -1315,7 +1320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709627134226427204, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
@@ -1969,6 +1974,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 8170153791668043271, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
 --- !u!224 &1997336936 stripped
@@ -2072,7 +2081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709627134226427204, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
@@ -2268,9 +2277,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1124899571547495685, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1124899572008509102, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1124899572048953354, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_IsActive
@@ -2335,7 +2348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709627134226427204, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
