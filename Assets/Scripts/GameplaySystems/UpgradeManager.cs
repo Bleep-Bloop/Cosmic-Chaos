@@ -37,10 +37,26 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgrade2TextBox;
     [SerializeField] private TextMeshProUGUI upgrade3TextBox;
 
+    /// Upgrade Choices ///
+    [Header("Upgrade Runtime")]
+    [Header("Picked Weapons")]
+    [SerializeField] private WeaponBase upgrade1Weapon;
+    [SerializeField] private WeaponBase upgrade2Weapon;
+    [SerializeField] private WeaponBase upgrade3Weapon;
+
+    [SerializeField] private WeaponUpgradeType upgrade1Type;
+    [SerializeField] private WeaponUpgradeType upgrade2Type;
+    [SerializeField] private WeaponUpgradeType upgrade3Type;
+
+    private float upgrade1Amount;
+    private float upgrade2Amount;
+    private float upgrade3Amount;
+
     private void Awake()
     {
         instance = this;
     }
+
     // Start is called before the first frame update
     void Start()
     {
