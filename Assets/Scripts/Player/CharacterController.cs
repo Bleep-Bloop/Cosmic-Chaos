@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
     private Vector3 movementVector = new Vector3();
     private Vector3 shotDirection = new Vector3(1, 0, 0);
 
+
     private void Awake()
     {
         character = GetComponent<CharacterBase>();
@@ -37,11 +38,16 @@ public class CharacterController : MonoBehaviour
         if(movementVector != Vector3.zero)
             shotDirection = movementVector;
 
-
         if(movementVector.x < 0)
             characterSpriteRenderer.flipX = false;
         else if(movementVector.x > 0)
             characterSpriteRenderer.flipX = true;
+
+        // Debug
+        if (Input.GetKeyDown(KeyCode.X))
+            UpgradeManager.instance.OpenUpgradeMenu();
+        if(Input.GetKeyDown(KeyCode.C))
+            UpgradeManager.instance.CloseUpgradeMenu();
         
     }
 
