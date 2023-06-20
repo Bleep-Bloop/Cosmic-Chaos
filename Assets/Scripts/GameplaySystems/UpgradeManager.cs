@@ -214,24 +214,12 @@ public class UpgradeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns List<WeaponBase> of all active weapons attached to playerCharacter.
-    /// Note - Requires AllAvailableWeapons. ToDo: Separate
+    /// Takes in a weapon and sets it Active for.
     /// </summary>
-    /// <returns></returns>
-    private List<WeaponBase> GetAllActiveWeapons()
+    /// <param name="weapon">Inactive WeaponBase to be made Active</param>
+    private void UnlockWeapon(WeaponBase weapon)
     {
-        List<WeaponBase> activeWeapons = new List<WeaponBase>();
-
-        List<WeaponBase> attachedWeapons = GetAllAvailableWeapons();
-        foreach (WeaponBase weapon in attachedWeapons)
-        {
-            if (weapon.isActiveAndEnabled)
-            {
-                activeWeapons.Add(weapon);
-            }
-        }
-
-        return activeWeapons;
+        weapon.gameObject.SetActive(true);
     }
 
 }
