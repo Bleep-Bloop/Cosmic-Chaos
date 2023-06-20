@@ -71,8 +71,46 @@ public class UpgradeManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    /// <summary>
+    /// Creates the three upgrade choices the player gets in the UpgradeManager UI.
+    /// These are used in the 'Upgrade1/2/3ButtonPressed' functions.
+    /// </summary>
+    private void PrepareUpgrades()
     {
+        upgrade1Weapon = allAvailableWeapons[Random.Range(0, allAvailableWeapons.Count)];
         
+        // Ensure the player does not get multiple unlock UpgradeType on the same weapon.
+        do
+        {
+            upgrade2Weapon = allAvailableWeapons[Random.Range(0, allAvailableWeapons.Count)];
+        } while (upgrade2Weapon == upgrade1Weapon && !upgrade2Weapon.isActiveAndEnabled);
+        
+        do
+        {
+            upgrade3Weapon = allAvailableWeapons[Random.Range(0, allAvailableWeapons.Count)];
+        } while (upgrade3Weapon == upgrade2Weapon && !upgrade3Weapon.isActiveAndEnabled ||
+                    upgrade3Weapon == upgrade1Weapon && !upgrade3Weapon.isActiveAndEnabled);
+
+        // Set Upgrade 1 
+        if(!upgrade1Weapon.isActiveAndEnabled)
+            upgrade1Type = WeaponUpgradeType.UnlockWeapon;
+        else
+            upgrade1Type = (WeaponUpgradeType)Random.Range(1, WeaponUpgradeType.GetNames(typeof(WeaponUpgradeType)).Length);
+
+        // Set Upgrade 2
+        if(!upgrade2Weapon.isActiveAndEnabled)
+            upgrade2Type = WeaponUpgradeType.UnlockWeapon;
+        else
+            upgrade2Type = (WeaponUpgradeType)Random.Range(1, WeaponUpgradeType.GetNames(typeof(WeaponUpgradeType)).Length);
+
+        // Set Upgrade 3
+        if(!upgrade3Weapon.isActiveAndEnabled)
+            upgrade3Type = WeaponUpgradeType.UnlockWeapon;
+        else
+            upgrade3Type = (WeaponUpgradeType)Random.Range(1, WeaponUpgradeType.GetNames(typeof(WeaponUpgradeType)).Length);
+
+    }
+
     }
 
     /// <summary>
