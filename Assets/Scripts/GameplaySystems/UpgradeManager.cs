@@ -67,6 +67,11 @@ public class UpgradeManager : MonoBehaviour
         allAvailableWeapons = GetAllAvailableWeapons();
         // Get active attached weapons
         allActiveWeapons = GetAllActiveWeapons();
+
+        // Bind UpgradeButtons
+        upgrade1Button.onClick.AddListener(Upgrade1ButtonPressed);
+        upgrade2Button.onClick.AddListener(Upgrade2ButtonPressed);
+        upgrade3Button.onClick.AddListener(Upgrade3ButtonPressed);
     }
 
     // Update is called once per frame
@@ -109,6 +114,78 @@ public class UpgradeManager : MonoBehaviour
         else
             upgrade3Type = (WeaponUpgradeType)Random.Range(1, WeaponUpgradeType.GetNames(typeof(WeaponUpgradeType)).Length);
 
+    }
+
+    /// <summary>
+    /// Performs Upgrade/Unlock set in PrepareButtons().
+    /// </summary>
+    private void Upgrade1ButtonPressed()
+    {
+        switch (upgrade1Type)
+        {
+            case WeaponUpgradeType.UnlockWeapon:
+                UnlockWeapon(upgrade1Weapon);
+                break;
+            case WeaponUpgradeType.ActivationTime:
+                break;
+            case WeaponUpgradeType.Damage:
+                break;
+            case WeaponUpgradeType.Range:
+                break;
+            case WeaponUpgradeType.Size:
+                break;
+            case WeaponUpgradeType.Speed:
+                break;
+            default:
+                break;
+        }
+        CloseUpgradeMenu();
+    }
+
+    private void Upgrade2ButtonPressed()
+    {
+        switch (upgrade2Type)
+        {
+            case WeaponUpgradeType.UnlockWeapon:
+                UnlockWeapon(upgrade2Weapon);
+                break;
+            case WeaponUpgradeType.ActivationTime:
+                break;
+            case WeaponUpgradeType.Damage:
+                break;
+            case WeaponUpgradeType.Range:
+                break;
+            case WeaponUpgradeType.Size:
+                break;
+            case WeaponUpgradeType.Speed:
+                break;
+            default:
+                break;
+        }
+        CloseUpgradeMenu();
+    }
+
+    private void Upgrade3ButtonPressed()
+    {
+        switch (upgrade2Type)
+        {
+            case WeaponUpgradeType.UnlockWeapon:
+                UnlockWeapon(upgrade3Weapon);
+                break;
+            case WeaponUpgradeType.ActivationTime:
+                break;
+            case WeaponUpgradeType.Damage:
+                break;
+            case WeaponUpgradeType.Range:
+                break;
+            case WeaponUpgradeType.Size:
+                break;
+            case WeaponUpgradeType.Speed:
+                break;
+            default:
+                break;
+        }
+        CloseUpgradeMenu();
     }
 
     }
