@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Joystick
   - Enemy
+  - LaserWallManager
   layers:
   - Default
   - TransparentFX
