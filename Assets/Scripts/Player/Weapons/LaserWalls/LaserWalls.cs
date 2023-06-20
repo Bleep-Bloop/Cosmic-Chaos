@@ -72,6 +72,9 @@ public class LaserWalls : WeaponBase
 
     public void StartLasers()
     {
+        // Check if there has been any changes to damage before activating.
+        enemyDamageZone.SetDamageAmount(laserWallManager.GetDamangePerInterval());
+
         laserStarted = true;
 
         // Destroy everything after laserUpTime has elapsed.
