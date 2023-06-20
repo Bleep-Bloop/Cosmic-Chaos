@@ -19,13 +19,13 @@ public class UpgradeManager : MonoBehaviour
 
     public static UpgradeManager instance;
 
+    /// Components ///
     [Header("Components")]
     private CharacterBase playerCharacter;
     [SerializeField] private List<WeaponBase> allAvailableWeapons = new List<WeaponBase>(); // All weapon's attached to CharacterBase.
-    [SerializeField] private List<WeaponBase> allActiveWeapons = new List<WeaponBase>(); // Attached weapons that are active.I may not need this, I can use inActive weapons to check for unlock them
     private FloatingJoystick floatingJoystick;
 
-    // Canvas/Panel for Upgrade UI
+    /// UI ///
     [Header("Upgrade UI")]
     [SerializeField] private Canvas UpgradeMenuCanvas;
     [Header("Buttons")]
@@ -63,10 +63,8 @@ public class UpgradeManager : MonoBehaviour
         playerCharacter = PlayerHealthManager.instance.GetComponent<CharacterBase>();
         floatingJoystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
 
-        // Get attached weapons
+        // Get all weapons attached to playerCharacter.
         allAvailableWeapons = GetAllAvailableWeapons();
-        // Get active attached weapons
-        allActiveWeapons = GetAllActiveWeapons();
 
         // Bind UpgradeButtons
         upgrade1Button.onClick.AddListener(Upgrade1ButtonPressed);
@@ -74,8 +72,6 @@ public class UpgradeManager : MonoBehaviour
         upgrade3Button.onClick.AddListener(Upgrade3ButtonPressed);
     }
 
-    // Update is called once per frame
-    void Update()
     /// <summary>
     /// Creates the three upgrade choices the player gets in the UpgradeManager UI.
     /// These are used in the 'Upgrade1/2/3ButtonPressed' functions.
