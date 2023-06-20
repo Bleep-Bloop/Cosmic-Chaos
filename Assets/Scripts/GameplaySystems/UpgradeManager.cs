@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 enum WeaponUpgradeType
 {
+    UnlockWeapon,
     ActivationTime,
     Damage,
     Range,
