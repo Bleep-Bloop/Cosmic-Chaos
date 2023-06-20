@@ -188,6 +188,17 @@ public class UpgradeManager : MonoBehaviour
         CloseUpgradeMenu();
     }
 
+    public void OpenUpgradeMenu()
+    {
+        UpgradeMenuCanvas.gameObject.SetActive(true);
+        floatingJoystick.gameObject.SetActive(false);
+        PrepareUpgrades();
+    }
+
+    public void CloseUpgradeMenu()
+    {
+        floatingJoystick.gameObject.SetActive(true);
+        UpgradeMenuCanvas.gameObject.SetActive(false);
     }
 
     /// <summary>
