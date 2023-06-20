@@ -17,6 +17,8 @@ enum WeaponUpgradeType
 public class UpgradeManager : MonoBehaviour
 {
 
+    public static UpgradeManager instance;
+
     [Header("Components")]
     private CharacterBase playerCharacter;
     [SerializeField] private List<WeaponBase> allAvailableWeapons = new List<WeaponBase>(); // All weapon's attached to CharacterBase.
@@ -35,6 +37,10 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgrade2TextBox;
     [SerializeField] private TextMeshProUGUI upgrade3TextBox;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
