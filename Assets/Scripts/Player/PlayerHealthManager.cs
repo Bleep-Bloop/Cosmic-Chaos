@@ -47,7 +47,7 @@ public class PlayerHealthManager : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            Debug.Log("PLAYER DEAD");
+            Death();
         }
 
     }
@@ -64,6 +64,21 @@ public class PlayerHealthManager : MonoBehaviour
     public void UpdateHealthBar()
     {
         healthBarSlider.value = currentHealth;
+    }
+
+    public void Death()
+    {
+        gameObject.SetActive(false);
+        if(GameMode_Survival.Instance)
+            GameMode_Survival.Instance.OpenReviveMenu();
+
+    }
+
+    public void Revive()
+    {
+        gameObject.SetActive(true);
+        currentHealth = maxHealth;
+        EnemySpawnManager.Instance.KillAllActiveEnemies();
     }
 
 }
