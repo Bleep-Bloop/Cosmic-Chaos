@@ -31,7 +31,20 @@ public class ObjectPool : MonoBehaviour
                 return pooledObjects[i];
             }
         }
-        return null;
+        return CreateNewPooledObject();
+    }
+
+    /// <summary>
+    /// Create a new objectToPool, add it to pooledObjects, and return said object.
+    /// </summary>
+    /// <returns>New objectToPool created and added to pooledObjects[].</returns>
+    virtual protected GameObject CreateNewPooledObject()
+    {
+        GameObject tmp;
+        tmp = Instantiate(objectToPool);
+        tmp.SetActive(false);
+        pooledObjects.Add(tmp);
+        return tmp;
     }
 
 }
