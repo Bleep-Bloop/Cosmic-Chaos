@@ -23,7 +23,6 @@ public class UpgradeManager : MonoBehaviour
     [Header("Components")]
     private CharacterBase playerCharacter;
     [SerializeField] private List<WeaponBase> allAvailableWeapons = new List<WeaponBase>(); // All weapon's attached to CharacterBase.
-    private FloatingJoystick floatingJoystick;
     public ObjectPool xpOrbObjectPool;
 
     /// UI ///
@@ -81,7 +80,6 @@ public class UpgradeManager : MonoBehaviour
         xpOrbObjectPool = GetComponent<ObjectPool>();
 
         playerCharacter = PlayerHealthManager.instance.GetComponent<CharacterBase>();
-        floatingJoystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
 
         // Get all weapons attached to playerCharacter.
         allAvailableWeapons = GetAllAvailableWeapons();
@@ -138,6 +136,7 @@ public class UpgradeManager : MonoBehaviour
         {
             AddXP(50);
         }
+
     }
 
     /// <summary>
@@ -320,14 +319,17 @@ public class UpgradeManager : MonoBehaviour
     public void OpenUpgradeMenu()
     {
         UpgradeMenuCanvas.gameObject.SetActive(true);
-        floatingJoystick.gameObject.SetActive(false);
+        if (GameMode_Survival.Instance)
+            GameMode_Survival.Instance.PauseGame();
+        
         PrepareUpgrades();
     }
 
     public void CloseUpgradeMenu()
     {
-        floatingJoystick.gameObject.SetActive(true);
         UpgradeMenuCanvas.gameObject.SetActive(false);
+        if (GameMode_Survival.Instance)
+            GameMode_Survival.Instance.ResumeGame();
     }
 
     /// <summary>
@@ -350,7 +352,5 @@ public class UpgradeManager : MonoBehaviour
     {
         weapon.gameObject.SetActive(true);
     }
-
-
 
 }

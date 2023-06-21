@@ -55,6 +55,7 @@ MonoBehaviour:
   movementSpeed: 0.3
   damageAmount: 2
   timeBetweenHits: 0.5
+  xpValue: 5
 --- !u!212 &6709627134226427202
 SpriteRenderer:
   m_ObjectHideFlags: 0

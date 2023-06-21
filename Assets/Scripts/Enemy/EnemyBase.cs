@@ -40,7 +40,10 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         // ToDo: Get reference from GameManager Singleton when added.
-        playerCharacter = GameObject.FindGameObjectWithTag("Player").transform;
+        if(GameObject.FindGameObjectWithTag("Player"))
+        {
+            playerCharacter = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         
         if(GameMode_Survival.Instance)
         {
@@ -54,6 +57,12 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(!playerCharacter)
+        {
+            playerCharacter = PlayerHealthManager.instance.gameObject.transform;
+        }
+
         if (PlayerHealthManager.instance.gameObject.activeSelf == true)
         {
             if(knockBackCounter > 0)
@@ -140,6 +149,5 @@ public class EnemyBase : MonoBehaviour
         }
 
     }
-
 
 }

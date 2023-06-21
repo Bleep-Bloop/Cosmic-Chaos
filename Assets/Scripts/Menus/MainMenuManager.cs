@@ -25,6 +25,11 @@ public class MainMenuManager : MonoBehaviour
     {
         startSurvivalGameButton.onClick.AddListener(StartSurvival);
         startDailyChallengeButton.onClick.AddListener(StartDailyChallenge);
+
+        // Load banner ad
+        if (UnityAdsManager.Instance)
+            UnityAdsManager.Instance.ToggleBanner();
+
     }
 
     // Update is called once per frame
@@ -35,11 +40,13 @@ public class MainMenuManager : MonoBehaviour
 
     private void StartSurvival()
     {
+        UnityAdsManager.Instance.ToggleBanner();
         SceneManager.LoadScene("DevScene");
     }
 
     private void StartDailyChallenge()
     {
+        UnityAdsManager.Instance.ToggleBanner();
         DayOfWeek weekday = DateTime.Today.DayOfWeek;
         switch (weekday)
         {
@@ -71,4 +78,6 @@ public class MainMenuManager : MonoBehaviour
 
     }
 
+
+    
 }
