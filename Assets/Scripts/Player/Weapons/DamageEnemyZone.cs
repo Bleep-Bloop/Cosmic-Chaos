@@ -17,6 +17,7 @@ public class DamageEnemyZone : MonoBehaviour
     [SerializeField] protected float timeBetweenHits = 0.2f;
 
     [SerializeField] protected float hitCountTimer;
+    [SerializeField] protected bool damagesPlayer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +55,14 @@ public class DamageEnemyZone : MonoBehaviour
         // If collision object is on 'Enemy' layer
         if (collision.gameObject.layer == 6 && hitCountTimer <= 0)
         {
-            Debug.Log("[DamageEnemyZone] Hit Enemy (stay)");
             collision.gameObject.GetComponent<EnemyBase>().TakeDamage(damageAmount, knocksBack, knockBackAmount);
 
             hitCountTimer = timeBetweenHits;
+        }
+        // Damage player if weapon has friendly fire
+        if (damagesPlayer &&collision.gameObject.layer == 3)
+        {
+            PlayerHealthManager.instance.TakeDamage(damageAmount);
         }
     }
 

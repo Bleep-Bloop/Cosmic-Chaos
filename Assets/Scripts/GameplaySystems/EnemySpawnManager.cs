@@ -9,6 +9,8 @@ public class EnemySpawnManager : MonoBehaviour
     [Header("Enemies")]
     [SerializeField] private List<GameObject> spawnableEnemies;
     private List<GameObject> spawnedEnemies = new List<GameObject>();
+    [SerializeField] private List<GameObject> spawnableBossEnemies;
+    private List<GameObject> spawnedBossEnemies = new List<GameObject>();
 
     [Header("Properties")]
     [SerializeField] private float timeBetweenSpawns; 
@@ -84,6 +86,20 @@ public class EnemySpawnManager : MonoBehaviour
                 checkTarget = 0;
             }
         }
+
+        // Debug Spawn Boss
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            SpawnBossEnemy();
+        }
+
+    }
+
+    public void SpawnBossEnemy()
+    {
+        int RandomBossChoice = Random.Range(0, spawnableBossEnemies.Count);
+        GameObject newBossEnemy = Instantiate(spawnableBossEnemies[RandomBossChoice], SelectSpawnPoint(), transform.rotation);
+        spawnedBossEnemies.Add(newBossEnemy);
     }
 
     public Vector3 SelectSpawnPoint()
