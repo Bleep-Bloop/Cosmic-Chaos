@@ -94,6 +94,9 @@ public class UpgradeManager : MonoBehaviour
         // Set max level based on values set in xpNeededForLevelUp list
         maxLevel = xpRequirement.Count;
 
+        if(currentLevel == 0)
+            LevelUp();
+
     }
 
     public void AddXP(int xpGained)
