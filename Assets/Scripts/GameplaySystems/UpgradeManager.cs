@@ -44,8 +44,6 @@ public class UpgradeManager : MonoBehaviour
     private WeaponBase upgrade2Weapon;
     private WeaponBase upgrade3Weapon;
     [Header("Upgrade Types")]
-    [SerializeField] private WeaponUpgradeType upgrade1Type;
-    [SerializeField] private WeaponUpgradeType upgrade2Type;
     private WeaponUpgradeType upgrade1Type;
     private WeaponUpgradeType upgrade2Type;
     private WeaponUpgradeType upgrade3Type;
@@ -61,6 +59,14 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private float sizeMinimum, sizeMaximum;
     [SerializeField] private float speedMinimum, speedMaximum;
 
+    [Header("Player XP")]
+    [SerializeField] private XPOrb xpPickup;
+
+    [SerializeField] private int currentLevel;
+    [SerializeField] private int maxLevel;
+
+    public List<int> xpRequirement   = new List<int>(); // XP required to move to the next level
+    [SerializeField] private int currentExperience;
 
     private void Awake()
     {
@@ -80,6 +86,10 @@ public class UpgradeManager : MonoBehaviour
         upgrade1Button.onClick.AddListener(Upgrade1ButtonPressed);
         upgrade2Button.onClick.AddListener(Upgrade2ButtonPressed);
         upgrade3Button.onClick.AddListener(Upgrade3ButtonPressed);
+
+        // Set max level based on values set in xpNeededForLevelUp list
+        maxLevel = xpRequirement.Count;
+
     }
 
     /// <summary>

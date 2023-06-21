@@ -1013,6 +1013,11 @@ MonoBehaviour:
   sizeMaximum: 2
   speedMinimum: 0.7
   speedMaximum: 1.3
+  currentLevel: 0
+  maxLevel: 0
+  xpForNextLevel: 00000000640000006400000064000000960000009600000096000000c8000000c8000000c8000000
+  currentExperience: 0
+  xpPickup: {fileID: 0}
 --- !u!4 &1097040342
 Transform:
   m_ObjectHideFlags: 0
