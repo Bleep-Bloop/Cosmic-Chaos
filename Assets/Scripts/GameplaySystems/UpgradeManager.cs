@@ -24,6 +24,7 @@ public class UpgradeManager : MonoBehaviour
     private CharacterBase playerCharacter;
     [SerializeField] private List<WeaponBase> allAvailableWeapons = new List<WeaponBase>(); // All weapon's attached to CharacterBase.
     private FloatingJoystick floatingJoystick;
+    public ObjectPool xpOrbObjectPool;
 
     /// UI ///
     [Header("Upgrade UI")]
@@ -40,13 +41,13 @@ public class UpgradeManager : MonoBehaviour
     /// Upgrade Choices ///
     [Header("Upgrade Runtime")]
     [Header("Picked Weapons")]
-    [SerializeField] private WeaponBase upgrade1Weapon;
-    [SerializeField] private WeaponBase upgrade2Weapon;
-    [SerializeField] private WeaponBase upgrade3Weapon;
+    private WeaponBase upgrade1Weapon;
+    private WeaponBase upgrade2Weapon;
+    private WeaponBase upgrade3Weapon;
     [Header("Upgrade Types")]
-    [SerializeField] private WeaponUpgradeType upgrade1Type;
-    [SerializeField] private WeaponUpgradeType upgrade2Type;
-    [SerializeField] private WeaponUpgradeType upgrade3Type;
+    private WeaponUpgradeType upgrade1Type;
+    private WeaponUpgradeType upgrade2Type;
+    private WeaponUpgradeType upgrade3Type;
     [Header("Upgrade Values")]
     private float upgrade1Amount;
     private float upgrade2Amount;
@@ -59,6 +60,14 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private float sizeMinimum, sizeMaximum;
     [SerializeField] private float speedMinimum, speedMaximum;
 
+    [Header("Player XP")]
+    [SerializeField] private XPOrb xpPickup;
+
+    [SerializeField] private int currentLevel;
+    [SerializeField] private int maxLevel;
+
+    public List<int> xpRequirement   = new List<int>(); // XP required to move to the next level
+    [SerializeField] private int currentXP;
 
     private void Awake()
     {
@@ -68,6 +77,9 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        xpOrbObjectPool = GetComponent<ObjectPool>();
+
         playerCharacter = PlayerHealthManager.instance.GetComponent<CharacterBase>();
         floatingJoystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
 
@@ -78,6 +90,51 @@ public class UpgradeManager : MonoBehaviour
         upgrade1Button.onClick.AddListener(Upgrade1ButtonPressed);
         upgrade2Button.onClick.AddListener(Upgrade2ButtonPressed);
         upgrade3Button.onClick.AddListener(Upgrade3ButtonPressed);
+
+        // Set max level based on values set in xpNeededForLevelUp list
+        maxLevel = xpRequirement.Count;
+
+    }
+
+    public void AddXP(int xpGained)
+    {
+        currentXP += xpGained;
+        if(currentLevel < maxLevel && currentXP >= xpRequirement[currentLevel])
+        {
+            LevelUp();
+            currentXP = 0;
+        }
+    }
+
+    /// <summary>
+    /// Take xpOrb from ObjectPool, place at given location, set the passed XP Value, and make active.
+    /// </summary>
+    /// <param name="location">World location to place XPOrb.</param>
+    /// <param name="xpValue">XP value to be given to placed XPOrb.</param>
+    public void SpawnXPOrb(Vector3 location, int xpValue)
+    {
+        GameObject xpOrb = xpOrbObjectPool.GetPooledObject();
+        if(xpOrb)
+        {
+            xpOrb.gameObject.transform.position = location;
+            xpOrb.gameObject.transform.rotation = Quaternion.identity;
+            xpOrb.GetComponent<XPOrb>().SetXPValue(xpValue);
+            xpOrb.SetActive(true);
+        }
+    }
+
+    private void LevelUp()
+    {
+        currentLevel++;
+        OpenUpgradeMenu();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            AddXP(50);
+        }
     }
 
     /// <summary>
