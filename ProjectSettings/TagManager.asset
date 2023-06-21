@@ -7,6 +7,7 @@ TagManager:
   - Joystick
   - Enemy
   - LaserWallManager
+  - GameMode
   layers:
   - Default
   - TransparentFX
