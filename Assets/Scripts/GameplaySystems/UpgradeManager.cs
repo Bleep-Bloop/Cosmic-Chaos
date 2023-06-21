@@ -92,7 +92,7 @@ public class UpgradeManager : MonoBehaviour
 
     }
 
-    void AddXP(int xpGained)
+    public void AddXP(int xpGained)
     {
         currentXP += xpGained;
         if(currentLevel < maxLevel && currentXP >= xpRequirement[currentLevel])
@@ -102,7 +102,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    void LevelUp()
+    private void LevelUp()
     {
         currentLevel++;
         OpenUpgradeMenu();
