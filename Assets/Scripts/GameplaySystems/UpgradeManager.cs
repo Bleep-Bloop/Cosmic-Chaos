@@ -123,14 +123,19 @@ public class UpgradeManager : MonoBehaviour
                 UnlockWeapon(upgrade1Weapon);
                 break;
             case WeaponUpgradeType.ActivationTime:
+                upgrade1Weapon.Upgrade_ActivationTime(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Damage:
+                upgrade1Weapon.Upgrade_Damage(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Range:
+                upgrade1Weapon.Upgrade_Range(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Size:
+                upgrade1Weapon.Upgrade_Size(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Speed:
+                upgrade1Weapon.Upgrade_Speed(upgrade1Amount);
                 break;
             default:
                 break;
@@ -146,14 +151,19 @@ public class UpgradeManager : MonoBehaviour
                 UnlockWeapon(upgrade2Weapon);
                 break;
             case WeaponUpgradeType.ActivationTime:
+                upgrade2Weapon.Upgrade_ActivationTime(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Damage:
+                upgrade2Weapon.Upgrade_Damage(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Range:
+                upgrade2Weapon.Upgrade_Range(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Size:
+                upgrade2Weapon.Upgrade_Size(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Speed:
+                upgrade2Weapon.Upgrade_Speed(upgrade2Amount);
                 break;
             default:
                 break;
@@ -163,20 +173,25 @@ public class UpgradeManager : MonoBehaviour
 
     private void Upgrade3ButtonPressed()
     {
-        switch (upgrade2Type)
+        switch (upgrade3Type)
         {
             case WeaponUpgradeType.UnlockWeapon:
                 UnlockWeapon(upgrade3Weapon);
                 break;
             case WeaponUpgradeType.ActivationTime:
+                upgrade3Weapon.Upgrade_ActivationTime(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Damage:
+                upgrade3Weapon.Upgrade_Damage(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Range:
+                upgrade3Weapon.Upgrade_Range(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Size:
+                upgrade3Weapon.Upgrade_Size(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Speed:
+                upgrade3Weapon.Upgrade_Speed(upgrade3Amount);
                 break;
             default:
                 break;
