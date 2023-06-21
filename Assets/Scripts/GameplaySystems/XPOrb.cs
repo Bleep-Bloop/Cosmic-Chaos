@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class XPOrb : MonoBehaviour
 {
+
+    [Header("Properties")]
+    [SerializeField] private int xpValue;
+
     // Start is called before the first frame update
     void Start()
     {
