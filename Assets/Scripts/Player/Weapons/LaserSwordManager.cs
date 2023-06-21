@@ -48,4 +48,10 @@ public class LaserSwordManager : WeaponBase
         }
     }
 
+    protected override void ApplyUpgrade(float newDamage, float newRange, Vector3 newSize, float newSpeed)
+    {
+        // Pass information to sword instances
+        leftSword.ApplyUpgradesFromManager(newDamage, newRange, newSize, newSpeed);
+        rightSword.ApplyUpgradesFromManager(newDamage, newRange, newSize, newSpeed);
+    }
 }
