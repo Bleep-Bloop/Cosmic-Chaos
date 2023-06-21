@@ -46,9 +46,8 @@ public class LaserSword : MonoBehaviour
     {
         Debug.Log("Apply Upgrades From Manager");
         GetComponent<DamageEnemyZone>().SetDamageAmount(newDamage); // Damage 
-
+        transform.localScale = newSize; // Size - General Local Scale
         transform.localScale = new Vector3(newRange, transform.localScale.y, transform.localScale.z); // Range - Increase sword scale only along x axis (range->reach).
-        transform.localScale = newSize; // Size
         anim.speed = newSpeed; // Speed - Animation Speed
     }
 
