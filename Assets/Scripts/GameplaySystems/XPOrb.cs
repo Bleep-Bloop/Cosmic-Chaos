@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(CircleCollider2D))]
 public class XPOrb : MonoBehaviour
 {
 
@@ -23,4 +25,14 @@ public class XPOrb : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 3)
+        {
+            playerUpgradeManager.AddXP(xpValue);
+            Destroy(gameObject);
+        }
+    }
+
 }
