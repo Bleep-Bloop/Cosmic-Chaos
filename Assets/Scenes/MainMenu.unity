@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Daily Challenge
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7e84438b3d0adec4c8d964c0e1d6caa8, type: 2}
-  m_sharedMaterial: {fileID: 7703832644659899815, guid: 7e84438b3d0adec4c8d964c0e1d6caa8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5cafecd0162eda14a982da5b91037985, type: 2}
+  m_sharedMaterial: {fileID: 7703832644659899815, guid: 5cafecd0162eda14a982da5b91037985, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 504135161}
   - component: {fileID: 504135160}
   - component: {fileID: 504135159}
+  - component: {fileID: 504135163}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -602,6 +603,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &504135163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504135158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce130a5cbe4ec7408aeeb6d360bc104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuCanvas: {fileID: 504135161}
+  startSurvivalGameButton: {fileID: 766748332}
+  startDailyChallengeButton: {fileID: 1921201476}
 --- !u!1 &694135984
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,8 +944,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SURVIVAL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7e84438b3d0adec4c8d964c0e1d6caa8, type: 2}
-  m_sharedMaterial: {fileID: 7703832644659899815, guid: 7e84438b3d0adec4c8d964c0e1d6caa8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5cafecd0162eda14a982da5b91037985, type: 2}
+  m_sharedMaterial: {fileID: 7703832644659899815, guid: 5cafecd0162eda14a982da5b91037985, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
