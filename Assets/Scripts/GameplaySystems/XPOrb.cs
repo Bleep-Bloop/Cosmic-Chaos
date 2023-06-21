@@ -29,4 +29,9 @@ public class XPOrb : MonoBehaviour
         }
     }
 
+    public void SetXPValue(int newXPValue)
+    {
+        xpValue = newXPValue;
+    }
+
 }
