@@ -100,7 +100,6 @@ public class EnemyBase : MonoBehaviour
         // If collision object is on 'Player' layer
         if (collision.gameObject.layer == 3 && hitCountTimer <= 0)
         {
-            Debug.Log("[EnemyBase] Hit Player");
             PlayerHealthManager.instance.TakeDamage(damageAmount);
 
             hitCountTimer = timeBetweenHits;
@@ -114,7 +113,6 @@ public class EnemyBase : MonoBehaviour
         // If collision object is on 'Player' layer
         if (collision.gameObject.layer == 3 && hitCountTimer <= 0)
         {
-            Debug.Log("[EnemyBase] Hit Player (stay)");
             PlayerHealthManager.instance.TakeDamage(damageAmount);
 
             hitCountTimer = timeBetweenHits;

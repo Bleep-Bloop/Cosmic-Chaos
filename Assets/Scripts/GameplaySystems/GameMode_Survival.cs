@@ -19,6 +19,7 @@ public class GameMode_Survival : MonoBehaviour
     [SerializeField] private float increaseDifficultyInterval; // Seconds between calls of IncreaseDifficulty.
     private float enemyHealthMultiplier; // Enemy health is multiplied by this number on their spawn.
     [SerializeField] private float enemyHealthMultiplierIncrease; // Amount enemyHealthMultiplier increases every call of increaseDifficulty().
+    [SerializeField] private float bossSpawnInterval; // Seconds between boss enemy spawns
 
     [Header("Ads")]
     [SerializeField] public bool watchingRewardedAd;
@@ -46,6 +47,7 @@ public class GameMode_Survival : MonoBehaviour
         killCounter = 0;
         UpdateKillCountTextBox();
         InvokeRepeating("IncreaseDifficulty", increaseDifficultyInterval, increaseDifficultyInterval);
+        InvokeRepeating("SpawnBoss", bossSpawnInterval, bossSpawnInterval);
         hasRevived = false;
         floatingJoystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
     }
@@ -135,6 +137,15 @@ public class GameMode_Survival : MonoBehaviour
         PlayerHealthManager.instance.Revive();
         hasRevived = true;
         CloseReviveMenu();
+    }
+
+    /// <summary>
+    /// Calls SpawnBossEnemy from games EnemySpawnManager every bossSpawnInterval.
+    /// </summary>
+    private void SpawnBoss()
+    {
+        if (EnemySpawnManager.Instance)
+            EnemySpawnManager.Instance.SpawnBossEnemy();
     }
 
 }

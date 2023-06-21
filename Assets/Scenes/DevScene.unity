@@ -156,6 +156,8 @@ MonoBehaviour:
   - {fileID: 6709627134226427204, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
   - {fileID: 6709627134226427204, guid: a572d72a2f4fd7741bd0f7b54f730c03, type: 3}
   - {fileID: 6709627134226427204, guid: ddb97768311686242a308f62849cc2cf, type: 3}
+  spawnableBossEnemies:
+  - {fileID: 6709627134226427204, guid: 84365910e826a9449acb6278d95cbf1b, type: 3}
   timeBetweenSpawns: 2
   checkPerFrame: 50
   minSpawn: {fileID: 1435521830}
@@ -228,6 +230,7 @@ MonoBehaviour:
   killCounter: 0
   increaseDifficultyInterval: 20
   enemyHealthMultiplierIncrease: 0.1
+  bossSpawnInterval: 2
   watchingRewardedAd: 0
   hasRevived: 0
   deathMenuCanvas: {fileID: 802917963}
@@ -65740,7 +65743,7 @@ RectTransform:
   m_Children:
   - {fileID: 1997336936}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -66177,7 +66180,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6709627134226427203, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6709627134226427203, guid: 26aba9b142be8494aa59a0690e822606, type: 3}
       propertyPath: m_LocalPosition.x

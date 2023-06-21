@@ -94,14 +94,6 @@ public class LineCollision : MonoBehaviour
         return colliderPositions;
     }
 
-    // Debug - ToDo: Add DamageEnemyZone
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == 3)
-        {
-            Debug.Log("LineCollision::OnTriggerEnter2D PLAYER ENTER");
-        }
-    }
 
     /// <summary>
     /// Calls from LateUpdate when a laser is able to be created.

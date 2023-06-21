@@ -86,6 +86,13 @@ public class EnemySpawnManager : MonoBehaviour
                 checkTarget = 0;
             }
         }
+
+        // Debug Spawn Boss
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            SpawnBossEnemy();
+        }
+
     }
 
     public void SpawnBossEnemy()

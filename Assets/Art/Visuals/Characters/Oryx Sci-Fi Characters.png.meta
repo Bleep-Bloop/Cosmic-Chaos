@@ -461,7 +461,7 @@ TextureImporter:
         width: 18
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -482,7 +482,7 @@ TextureImporter:
         width: 18
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -490,6 +490,48 @@ TextureImporter:
       bones: []
       spriteID: b39c0d9984361fc45b123d2fbdcbe30e
       internalID: -2081518019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossTankEnemy1
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 624
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7babb0c1109954c8a90b6c3a83d52f
+      internalID: 1192231142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossTankEnemy2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 624
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05eea1d58760bc24796bb3ee0400a031
+      internalID: -1906552685
       vertices: []
       indices: 
       edges: []
@@ -517,9 +559,11 @@ TextureImporter:
       Alien_White_Idle_2: -879830222
       SpaceMan_White_Idle_1: -592042408
       Alien_White_Idle_1: -822334195
+      BossTankEnemy1: 1192231142
       TentacleAlien2: -476750339
       Shadow2: 752961834
       Shadow7: 756465844
+      BossTankEnemy2: -1906552685
       LaserWall_Node: 1729205605
       Shadow6: -439129892
       Shadow10: -250371080
