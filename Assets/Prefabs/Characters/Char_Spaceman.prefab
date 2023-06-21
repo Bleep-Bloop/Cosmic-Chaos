@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1124899570433009070}
   - component: {fileID: 1124899570433009065}
   - component: {fileID: 1124899570433009064}
+  - component: {fileID: 1124899570925813004}
   m_Layer: 3
   m_Name: Char_Spaceman
   m_TagString: Player
@@ -203,6 +204,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1124899570925813004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124899570433009067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d982d861329b8de4589604a76d9036c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
 --- !u!1001 &697302620813769099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,11 +270,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446176567441897857, guid: c66e539ce085e7443bab85bc7fc8be47, type: 3}
       propertyPath: m_Name
-      value: LaserPistolHolder
+      value: LaserPistol
       objectReference: {fileID: 0}
     - target: {fileID: 446176567441897857, guid: c66e539ce085e7443bab85bc7fc8be47, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446176567441897859, guid: c66e539ce085e7443bab85bc7fc8be47, type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 446176567441897859, guid: c66e539ce085e7443bab85bc7fc8be47, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 446176567441897859, guid: c66e539ce085e7443bab85bc7fc8be47, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 446176567441897859, guid: c66e539ce085e7443bab85bc7fc8be47, type: 3}
+      propertyPath: minimumAllowedTimeBetweenActivations
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66e539ce085e7443bab85bc7fc8be47, type: 3}
@@ -276,9 +306,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1124899570433009069}
     m_Modifications:
+    - target: {fileID: 268253138856301184, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 268253138856301184, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 268253138856301184, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: damage
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268253138856301184, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268253138856301184, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268253138856301184, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268253138856301184, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: minimumAllowedTimeBetweenActivations
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 268253138856301186, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
       propertyPath: m_Name
-      value: LaserWallsHolder
+      value: LaserWalls
+      objectReference: {fileID: 0}
+    - target: {fileID: 268253138856301186, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 268253138856301187, guid: a99ff8af64a24074e8708ac2c97592db, type: 3}
       propertyPath: m_RootOrder
@@ -339,8 +401,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 1124899570433009069}
     m_Modifications:
     - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
       propertyPath: timeBetweenActivations
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393341047295761806, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
+      propertyPath: minimumAllowedTimeBetweenActivations
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1393341047295761807, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
       propertyPath: m_RootOrder
@@ -388,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1393341047295761808, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
       propertyPath: m_Name
-      value: LaserSwordHolder
+      value: LaserSwords
       objectReference: {fileID: 0}
     - target: {fileID: 1393341047295761808, guid: aed44e647b723ce4ba6e5658c8d5035a, type: 3}
       propertyPath: m_IsActive
@@ -420,7 +510,7 @@ MonoBehaviour:
   knocksBack: 1
   knockBackAmount: 0.2
   destroyOnDamage: 0
-  timeBetweenHits: 0.1
+  timeBetweenHits: 0.01
   hitCountTimer: 0
 --- !u!4 &1124899571547495706 stripped
 Transform:
