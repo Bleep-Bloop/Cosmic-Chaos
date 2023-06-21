@@ -3254,10 +3254,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 276968648, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: timeBetweenHits
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 1124899570433009067, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_Name
       value: Char_Spaceman
@@ -3304,106 +3300,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1124899570433009069, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495685, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: m_Name
-      value: LaserSwords
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495685, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495707, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: range
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495707, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495707, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495707, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495707, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495707, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899571547495707, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: minimumAllowedTimeBetweenActivations
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: range
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: damage
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: minimumAllowedTimeBetweenActivations
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509102, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: m_Name
-      value: LaserWalls
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572008509102, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572048953352, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572048953352, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572048953352, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572048953352, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572048953352, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: minimumAllowedTimeBetweenActivations
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572048953354, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: m_Name
-      value: LaserPistol
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124899572048953354, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
