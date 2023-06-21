@@ -41,6 +41,12 @@ public class EnemyBase : MonoBehaviour
     {
         // ToDo: Get reference from GameManager Singleton when added.
         playerCharacter = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        if(GameMode_Survival.Instance)
+        {
+            baseHealth *= GameMode_Survival.Instance.GetEnemyHealthMultipler();
+        }
+
         currentHealth = baseHealth;
 
     }
