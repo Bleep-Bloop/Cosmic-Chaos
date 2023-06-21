@@ -43,14 +43,22 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private WeaponBase upgrade1Weapon;
     [SerializeField] private WeaponBase upgrade2Weapon;
     [SerializeField] private WeaponBase upgrade3Weapon;
-
+    [Header("Upgrade Types")]
     [SerializeField] private WeaponUpgradeType upgrade1Type;
     [SerializeField] private WeaponUpgradeType upgrade2Type;
     [SerializeField] private WeaponUpgradeType upgrade3Type;
-
+    [Header("Upgrade Values")]
     private float upgrade1Amount;
     private float upgrade2Amount;
     private float upgrade3Amount;
+    [Header("Upgrade Value Constraints")]
+    [SerializeField] private float activationTimeMinimum;
+    [SerializeField] private float activationTimeMaximum;
+    [SerializeField] private float damageMinimum, damageMaximum;
+    [SerializeField] private float rangeMinimum, rangeMaximum;
+    [SerializeField] private float sizeMinimum, sizeMaximum;
+    [SerializeField] private float speedMinimum, speedMaximum;
+
 
     private void Awake()
     {
@@ -97,18 +105,43 @@ public class UpgradeManager : MonoBehaviour
             upgrade1Type = WeaponUpgradeType.UnlockWeapon;
         else
             upgrade1Type = (WeaponUpgradeType)Random.Range(1, WeaponUpgradeType.GetNames(typeof(WeaponUpgradeType)).Length);
+        // Display Upgrade Choice
+        if(upgrade1Type != WeaponUpgradeType.UnlockWeapon)
+        {
+            upgrade1Amount = GetUpgradeAmount(upgrade1Type);
+            upgrade1TextBox.SetText(upgrade1Weapon.name + "\n" + upgrade1Type.ToString() + ": " + upgrade1Amount.ToString("F2"));
+        }
+        else
+            upgrade1TextBox.SetText("Unlock: \n" + upgrade1Weapon.name);
+
 
         // Set Upgrade 2
-        if(!upgrade2Weapon.isActiveAndEnabled)
+        if (!upgrade2Weapon.isActiveAndEnabled)
             upgrade2Type = WeaponUpgradeType.UnlockWeapon;
         else
             upgrade2Type = (WeaponUpgradeType)Random.Range(1, WeaponUpgradeType.GetNames(typeof(WeaponUpgradeType)).Length);
+        // Display Upgrade Choice
+        if (upgrade2Type != WeaponUpgradeType.UnlockWeapon)
+        {
+            upgrade2Amount = GetUpgradeAmount(upgrade2Type);
+            upgrade2TextBox.SetText(upgrade2Weapon.name + "\n" + upgrade2Type.ToString() + ": " + upgrade2Amount.ToString("F2"));
+        }
+        else
+            upgrade2TextBox.SetText("Unlock: \n" + upgrade2Weapon.name);
 
         // Set Upgrade 3
-        if(!upgrade3Weapon.isActiveAndEnabled)
+        if (!upgrade3Weapon.isActiveAndEnabled)
             upgrade3Type = WeaponUpgradeType.UnlockWeapon;
         else
             upgrade3Type = (WeaponUpgradeType)Random.Range(1, WeaponUpgradeType.GetNames(typeof(WeaponUpgradeType)).Length);
+        // Display Upgrade Choice
+        if (upgrade3Type != WeaponUpgradeType.UnlockWeapon)
+        {
+            upgrade3Amount = GetUpgradeAmount(upgrade3Type);
+            upgrade3TextBox.SetText(upgrade3Weapon.name + "\n" + upgrade3Type.ToString() + ": " + upgrade3Amount.ToString("F2"));
+        }
+        else
+            upgrade3TextBox.SetText("Unlock: \n" + upgrade3Weapon.name);
 
     }
 
@@ -123,14 +156,19 @@ public class UpgradeManager : MonoBehaviour
                 UnlockWeapon(upgrade1Weapon);
                 break;
             case WeaponUpgradeType.ActivationTime:
+                upgrade1Weapon.Upgrade_ActivationTime(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Damage:
+                upgrade1Weapon.Upgrade_Damage(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Range:
+                upgrade1Weapon.Upgrade_Range(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Size:
+                upgrade1Weapon.Upgrade_Size(upgrade1Amount);
                 break;
             case WeaponUpgradeType.Speed:
+                upgrade1Weapon.Upgrade_Speed(upgrade1Amount);
                 break;
             default:
                 break;
@@ -146,14 +184,19 @@ public class UpgradeManager : MonoBehaviour
                 UnlockWeapon(upgrade2Weapon);
                 break;
             case WeaponUpgradeType.ActivationTime:
+                upgrade2Weapon.Upgrade_ActivationTime(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Damage:
+                upgrade2Weapon.Upgrade_Damage(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Range:
+                upgrade2Weapon.Upgrade_Range(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Size:
+                upgrade2Weapon.Upgrade_Size(upgrade2Amount);
                 break;
             case WeaponUpgradeType.Speed:
+                upgrade2Weapon.Upgrade_Speed(upgrade2Amount);
                 break;
             default:
                 break;
@@ -163,25 +206,55 @@ public class UpgradeManager : MonoBehaviour
 
     private void Upgrade3ButtonPressed()
     {
-        switch (upgrade2Type)
+        switch (upgrade3Type)
         {
             case WeaponUpgradeType.UnlockWeapon:
                 UnlockWeapon(upgrade3Weapon);
                 break;
             case WeaponUpgradeType.ActivationTime:
+                upgrade3Weapon.Upgrade_ActivationTime(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Damage:
+                upgrade3Weapon.Upgrade_Damage(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Range:
+                upgrade3Weapon.Upgrade_Range(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Size:
+                upgrade3Weapon.Upgrade_Size(upgrade3Amount);
                 break;
             case WeaponUpgradeType.Speed:
+                upgrade3Weapon.Upgrade_Speed(upgrade3Amount);
                 break;
             default:
                 break;
         }
         CloseUpgradeMenu();
+    }
+
+    /// <summary>
+    /// Returns a random value for each WeaponUpgradeType.
+    /// Note - Uses minimum/maximum variables to calculate random value.
+    /// </summary>
+    /// <param name="upgradeType">Upgrade type you are looking for a value of.</param>
+    /// <returns>Value to use when applying an upgrade of given type.</returns>
+    private float GetUpgradeAmount(WeaponUpgradeType upgradeType)
+    {
+        switch (upgradeType)
+        {
+            case WeaponUpgradeType.ActivationTime:
+                return Random.Range(activationTimeMinimum, activationTimeMaximum);
+            case WeaponUpgradeType.Damage:
+                return Random.Range(damageMinimum, damageMaximum);
+            case WeaponUpgradeType.Range:
+                return Random.Range(rangeMinimum, rangeMaximum);
+            case WeaponUpgradeType.Size:
+                return Random.Range(sizeMinimum, sizeMaximum);
+            case WeaponUpgradeType.Speed:
+                return Random.Range(speedMinimum, speedMaximum);
+            default:
+                return 1.0f;
+        }
     }
 
     public void OpenUpgradeMenu()
@@ -217,5 +290,7 @@ public class UpgradeManager : MonoBehaviour
     {
         weapon.gameObject.SetActive(true);
     }
+
+
 
 }

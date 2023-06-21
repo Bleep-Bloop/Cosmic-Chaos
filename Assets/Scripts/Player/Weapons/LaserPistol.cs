@@ -27,12 +27,29 @@ public class LaserPistol : WeaponBase
 
     void SpawnProjectile()
     {
-        Projectile spawnedProjectile = Instantiate(projectileToSpawn, projectileSpawnLocation.position, projectileSpawnLocation.rotation);
-        spawnedProjectile.SetShotDirection(character.GetShotDirection());
+        Projectile newProjectile = Instantiate(projectileToSpawn, projectileSpawnLocation.position, projectileSpawnLocation.rotation);
+        ApplyUpgrades(newProjectile);
+        newProjectile.SetShotDirection(character.GetShotDirection());
+
     }
 
     protected override void Attack()
     {
         SpawnProjectile();
+    }
+
+    
+    protected void ApplyUpgrades(Projectile spawnedProjectile)
+    {
+        spawnedProjectile.GetComponent<DamageEnemyZone>().SetDamageAmount(damage);
+        spawnedProjectile.setTimeAlive(range);
+        spawnedProjectile.gameObject.transform.localScale = size;
+        spawnedProjectile.SetProjectileSpeed(speed);
+    }
+    
+
+    protected override void ApplyUpgrade(float newDamage, float newRange, Vector3 newSize, float newSpeed)
+    {
+        // Not necessary in this one instance
     }
 }

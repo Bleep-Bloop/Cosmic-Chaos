@@ -23,6 +23,7 @@ public class LaserWalls : WeaponBase
 
     [Header("Runtime")]
     [SerializeField] public bool laserStarted;
+    public Vector3 upgradedScale;
     
 
     private void Awake()
@@ -77,6 +78,7 @@ public class LaserWalls : WeaponBase
 
         laserStarted = true;
 
+
         // Destroy everything after laserUpTime has elapsed.
         Invoke("DestroyLaserWallSystem", laserUpTime);
 
@@ -93,4 +95,29 @@ public class LaserWalls : WeaponBase
         laserWallManager.ResetCanActivateLasers();
         Destroy(gameObject);
     }
+
+    protected override void ApplyUpgrade(float newDamage, float newRange, Vector3 newSize, float newSpeed)
+    {
+        // Unnecessary in this instance. Information is passed from LaserWallManager.
+        UpgradeFromManager(newDamage, newSize);
+    }
+
+    public void UpgradeFromManager(float newDamage,Vector3 newSize)
+    {
+        // Range and Activation Time handled in Manager.
+        upgradedScale = newSize; // upgradedSize is grabbed and used in LineCollision to effect scale. // ToDo: SIZE IS NOT IMPLEMENTED
+        enemyDamageZone.SetDamageAmount(laserWallManager.GetDamangePerInterval()); // Set damage amount.
+        laserUpTime = laserWallManager.GetLaserUpTime(); // Set speed upgrade.
+        
+    }
+
+    public Vector3 GetSize()
+    {
+        // temporary 
+        upgradedScale = new Vector3(2, 2, 2);
+
+        return upgradedScale;
+    }
+
+
 }

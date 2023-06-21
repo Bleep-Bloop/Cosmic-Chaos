@@ -10,6 +10,7 @@ public class LaserWallManager : WeaponBase
 
     [Header("Properties")]
     [SerializeField] float damagePerInterval; // Passed to DamageEnemyZone attached to instantiated LaserWalls.
+    [SerializeField] float laserUpTime;
 
     [Header("Runtime")]
     private bool canActivateLasers;
@@ -53,4 +54,21 @@ public class LaserWallManager : WeaponBase
         return damagePerInterval;
     }
 
+    protected override void ApplyUpgrade(float newDamage, float newRange, Vector3 newSize, float newSpeed)
+    {
+        damagePerInterval = newDamage;
+        timeBetweenActivations += newRange;
+        transform.localScale = newSize;
+        laserUpTime += newSpeed;
+    }
+
+    public Vector3 GetSize()
+    {
+        return transform.localScale;
+    }
+
+    public float GetLaserUpTime()
+    {
+        return laserUpTime;
+    }
 }

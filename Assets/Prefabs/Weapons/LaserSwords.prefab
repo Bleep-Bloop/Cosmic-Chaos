@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1393341047295761807}
   - component: {fileID: 1393341047295761806}
   m_Layer: 3
-  m_Name: LaserSwordHolder
+  m_Name: LaserSwords
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

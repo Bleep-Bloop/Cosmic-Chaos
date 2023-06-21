@@ -7,12 +7,13 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] private float projectileSpeed = 2;
     private Vector3 shotDirection;
+    private float timeAlive = 3;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("DestroyMyself", timeAlive);
     }
 
     // Update is called once per frame
@@ -29,6 +30,21 @@ public class Projectile : MonoBehaviour
     public void SetShotDirection(Vector3 direction)
     {
         shotDirection = direction;
+    }
+
+    public void DestroyMyself()
+    {
+        Destroy(gameObject);
+    }
+
+    public float getTimeAlive()
+    {
+        return timeAlive;
+    }
+
+    public void setTimeAlive(float newTimeAlive)
+    {
+        timeAlive = newTimeAlive;
     }
 
 }
