@@ -35,6 +35,7 @@ public abstract class WeaponBase : MonoBehaviour
     public void Upgrade_Damage(float increaseAmount)
     {
         damage += increaseAmount;
+        ApplyUpgrade(damage, range, size, speed);
     }
 
     // Decreases ActivationTime by given amount
@@ -47,11 +48,13 @@ public abstract class WeaponBase : MonoBehaviour
         }
 
         ChangeTimeBetweenActivations(newTimeBetweenActivations);
+        ApplyUpgrade(damage, range, size, speed);
     }
 
     public void Upgrade_Range(float increaseAmount)
     {
         range += increaseAmount;
+        ApplyUpgrade(damage, range, size, speed);
     }
 
     /// <summary>
@@ -61,11 +64,16 @@ public abstract class WeaponBase : MonoBehaviour
     public void Upgrade_Size(float scaleMultipler)
     {
         size *= scaleMultipler;
+        ApplyUpgrade(damage, range, size, speed);
     }
 
     public void Upgrade_Speed(float increaseAmount)
     {
         speed += increaseAmount;
+        ApplyUpgrade(damage, range, size, speed);
     }
+
+    // Applies upgraded values to weapons to use in their unique ways.
+    protected abstract void ApplyUpgrade(float newDamage, float newRange, Vector3 newSize, float newSpeed);
 
 }
