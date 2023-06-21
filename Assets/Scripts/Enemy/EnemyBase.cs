@@ -20,6 +20,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float damageAmount;
     [SerializeField] protected float timeBetweenHits = 0.1f; // Time before calling damage again while maintaining contact.
     protected float knockBackTime = 0.5f; // Time enemy is pushed away for (Set through TakeDamage(), passed by DamageEnemyZone).
+    [SerializeField] protected int xpValue;
 
     [Header("Runtime")]
     protected Transform playerCharacter;
@@ -124,6 +125,7 @@ public class EnemyBase : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            UpgradeManager.instance.SpawnXPOrb(transform.position, xpValue);
             Destroy(gameObject);
         }
 
