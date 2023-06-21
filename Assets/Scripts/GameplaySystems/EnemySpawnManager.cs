@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
+    public static EnemySpawnManager Instance;
 
     [Header("Enemies")]
     [SerializeField] private List<GameObject> spawnableEnemies;
@@ -21,6 +22,10 @@ public class EnemySpawnManager : MonoBehaviour
 
     private Transform playerCharacter;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -106,6 +111,14 @@ public class EnemySpawnManager : MonoBehaviour
                 spawnPoint.y = minSpawn.position.y;
         }
         return spawnPoint;
+    }
+
+    public void KillAllActiveEnemies()
+    {
+        foreach (GameObject enemy in spawnedEnemies)
+        {
+            enemy.GetComponent<EnemyBase>().TakeDamage(1000, false, 0);
+        }
     }
 
 }
