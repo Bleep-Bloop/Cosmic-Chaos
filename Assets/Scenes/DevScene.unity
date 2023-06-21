@@ -2329,7 +2329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: damage
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1124899572008509100, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: size.x
@@ -2349,7 +2349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1124899572008509102, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1124899572048953352, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: size
