@@ -106,6 +106,23 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Take xpOrb from ObjectPool, place at given location, set the passed XP Value, and make active.
+    /// </summary>
+    /// <param name="location">World location to place XPOrb.</param>
+    /// <param name="xpValue">XP value to be given to placed XPOrb.</param>
+    public void SpawnXPOrb(Vector3 location, int xpValue)
+    {
+        GameObject xpOrb = xpOrbObjectPool.GetPooledObject();
+        if(xpOrb)
+        {
+            xpOrb.gameObject.transform.position = location;
+            xpOrb.gameObject.transform.rotation = Quaternion.identity;
+            xpOrb.GetComponent<XPOrb>().SetXPValue(xpValue);
+            xpOrb.SetActive(true);
+        }
+    }
+
     private void LevelUp()
     {
         currentLevel++;
