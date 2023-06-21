@@ -125,7 +125,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +146,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,7 +188,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,6 +196,153 @@ TextureImporter:
       bones: []
       spriteID: f6202ba2b93404b488a8d478a40ade18
       internalID: 358000346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oryx_16bit_scifi_world_trans_1
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 410
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463f30ef700a1c24b9098135f4df078a
+      internalID: 658856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oryx_16bit_scifi_world_trans_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 409
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2051b573a95cd449615ecd48e02630
+      internalID: 1349680529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oryx_16bit_scifi_world_trans_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 408
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ba6d7d3600b144b903714e38dc266c
+      internalID: 2057174983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oryx_16bit_scifi_world_trans_4
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 415
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2037b692225ce443b6c714897afe2eb
+      internalID: -467361121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oryx_16bit_scifi_world_trans_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 410
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c45e39c8dca1d4e95e1601870c1bff
+      internalID: -2033039408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oryx_16bit_scifi_world_trans_6
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 413
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692d44ccba7f22044a88a3865172b0e6
+      internalID: 996049156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oryx_16bit_scifi_world_trans_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 409
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45eaed406bc79134289477d8a4c6bed3
+      internalID: 398343266
       vertices: []
       indices: 
       edges: []
@@ -212,9 +359,15 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Environmet_DarkGround_1: 89050075
+      oryx_16bit_scifi_world_trans_2: 1349680529
+      oryx_16bit_scifi_world_trans_3: 2057174983
       Environmet_DarkGround_2: 579242180
+      oryx_16bit_scifi_world_trans_7: 398343266
       Environmet_DarkGround_4: 358000346
+      oryx_16bit_scifi_world_trans_6: 996049156
+      oryx_16bit_scifi_world_trans_4: -467361121
       oryx_16bit_scifi_world_trans_0: -1611917053
+      oryx_16bit_scifi_world_trans_5: -2033039408
       oryx_16bit_scifi_world_trans_1: 658856
   spritePackingTag: 
   pSDRemoveMatte: 0
