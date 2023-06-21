@@ -40,13 +40,15 @@ public class UpgradeManager : MonoBehaviour
     /// Upgrade Choices ///
     [Header("Upgrade Runtime")]
     [Header("Picked Weapons")]
-    [SerializeField] private WeaponBase upgrade1Weapon;
-    [SerializeField] private WeaponBase upgrade2Weapon;
-    [SerializeField] private WeaponBase upgrade3Weapon;
+    private WeaponBase upgrade1Weapon;
+    private WeaponBase upgrade2Weapon;
+    private WeaponBase upgrade3Weapon;
     [Header("Upgrade Types")]
     [SerializeField] private WeaponUpgradeType upgrade1Type;
     [SerializeField] private WeaponUpgradeType upgrade2Type;
-    [SerializeField] private WeaponUpgradeType upgrade3Type;
+    private WeaponUpgradeType upgrade1Type;
+    private WeaponUpgradeType upgrade2Type;
+    private WeaponUpgradeType upgrade3Type;
     [Header("Upgrade Values")]
     private float upgrade1Amount;
     private float upgrade2Amount;
