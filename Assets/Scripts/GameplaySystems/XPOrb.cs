@@ -20,18 +20,12 @@ public class XPOrb : MonoBehaviour
         playerUpgradeManager = UpgradeManager.instance;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 3)
         {
             playerUpgradeManager.AddXP(xpValue);
-            Destroy(gameObject);
+            gameObject.SetActive(false); // Retun object to pool
         }
     }
 
