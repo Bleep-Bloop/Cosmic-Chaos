@@ -24,6 +24,7 @@ public class UpgradeManager : MonoBehaviour
     private CharacterBase playerCharacter;
     [SerializeField] private List<WeaponBase> allAvailableWeapons = new List<WeaponBase>(); // All weapon's attached to CharacterBase.
     private FloatingJoystick floatingJoystick;
+    public ObjectPool xpOrbObjectPool;
 
     /// UI ///
     [Header("Upgrade UI")]
@@ -76,6 +77,9 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        xpOrbObjectPool = GetComponent<ObjectPool>();
+
         playerCharacter = PlayerHealthManager.instance.GetComponent<CharacterBase>();
         floatingJoystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
 
