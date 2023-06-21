@@ -2288,6 +2288,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1124899571547495685, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
+      propertyPath: m_Name
+      value: LaserSwords
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124899571547495685, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2348,6 +2352,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1124899572008509102, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
+      propertyPath: m_Name
+      value: LaserWalls
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124899572008509102, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2370,6 +2378,10 @@ PrefabInstance:
     - target: {fileID: 1124899572048953352, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: minimumAllowedTimeBetweenActivations
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124899572048953354, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
+      propertyPath: m_Name
+      value: LaserPistol
       objectReference: {fileID: 0}
     - target: {fileID: 1124899572048953354, guid: d982f9ea128e94a488883eaf3835fdfe, type: 3}
       propertyPath: m_IsActive

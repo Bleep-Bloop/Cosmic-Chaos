@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 268253138856301187}
   - component: {fileID: 268253138856301184}
   m_Layer: 3
-  m_Name: LaserWallsHolder
+  m_Name: LaserWalls
   m_TagString: LaserWallManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

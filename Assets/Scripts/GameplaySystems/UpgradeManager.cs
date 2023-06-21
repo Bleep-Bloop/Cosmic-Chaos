@@ -112,7 +112,7 @@ public class UpgradeManager : MonoBehaviour
             upgrade1TextBox.SetText(upgrade1Weapon.name + "\n" + upgrade1Type.ToString() + ": " + upgrade1Amount.ToString("F2"));
         }
         else
-            upgrade1TextBox.SetText("Unlock: " + upgrade1Weapon.name);
+            upgrade1TextBox.SetText("Unlock: \n" + upgrade1Weapon.name);
 
 
         // Set Upgrade 2
@@ -127,7 +127,7 @@ public class UpgradeManager : MonoBehaviour
             upgrade2TextBox.SetText(upgrade2Weapon.name + "\n" + upgrade2Type.ToString() + ": " + upgrade2Amount.ToString("F2"));
         }
         else
-            upgrade2TextBox.SetText("Unlock: " + upgrade2Weapon.name);
+            upgrade2TextBox.SetText("Unlock: \n" + upgrade2Weapon.name);
 
         // Set Upgrade 3
         if (!upgrade3Weapon.isActiveAndEnabled)
@@ -141,7 +141,7 @@ public class UpgradeManager : MonoBehaviour
             upgrade3TextBox.SetText(upgrade3Weapon.name + "\n" + upgrade3Type.ToString() + ": " + upgrade3Amount.ToString("F2"));
         }
         else
-            upgrade3TextBox.SetText("Unlock: " + upgrade3Weapon.name);
+            upgrade3TextBox.SetText("Unlock: \n" + upgrade3Weapon.name);
 
     }
 
