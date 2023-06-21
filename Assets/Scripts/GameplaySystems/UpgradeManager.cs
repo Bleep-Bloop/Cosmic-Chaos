@@ -66,7 +66,7 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private int maxLevel;
 
     public List<int> xpRequirement   = new List<int>(); // XP required to move to the next level
-    [SerializeField] private int currentExperience;
+    [SerializeField] private int currentXP;
 
     private void Awake()
     {
@@ -90,6 +90,30 @@ public class UpgradeManager : MonoBehaviour
         // Set max level based on values set in xpNeededForLevelUp list
         maxLevel = xpRequirement.Count;
 
+    }
+
+    void AddXP(int xpGained)
+    {
+        currentXP += xpGained;
+        if(currentLevel < maxLevel && currentXP >= xpRequirement[currentLevel])
+        {
+            LevelUp();
+            currentXP = 0;
+        }
+    }
+
+    void LevelUp()
+    {
+        currentLevel++;
+        OpenUpgradeMenu();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            AddXP(50);
+        }
     }
 
     /// <summary>
