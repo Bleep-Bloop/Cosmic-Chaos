@@ -126,6 +126,10 @@ public class EnemyBase : MonoBehaviour
         if(currentHealth <= 0)
         {
             UpgradeManager.instance.SpawnXPOrb(transform.position, xpValue);
+            
+            if(GameMode_Survival.Instance)
+                GameMode_Survival.Instance.IncrementKillCounter();
+
             Destroy(gameObject);
         }
 
