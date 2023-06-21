@@ -60,6 +60,16 @@ public class GameMode_Survival : MonoBehaviour
             watchingRewardedAd = true;
         }
     }
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        floatingJoystick.gameObject.SetActive(false);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        floatingJoystick.gameObject.SetActive(true);
     }
 
     public void IncrementKillCounter()
