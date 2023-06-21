@@ -42,7 +42,7 @@ public class LaserPistol : WeaponBase
     {
         spawnedProjectile.GetComponent<DamageEnemyZone>().SetDamageAmount(damage);
         spawnedProjectile.setTimeAlive(range);
-        spawnedProjectile.gameObject.transform.localScale *= size;
+        spawnedProjectile.gameObject.transform.localScale = size;
         spawnedProjectile.SetProjectileSpeed(speed);
     }
 }

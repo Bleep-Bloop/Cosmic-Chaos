@@ -10,12 +10,13 @@ public abstract class WeaponBase : MonoBehaviour
     // Upgrades
     [SerializeField] protected float damage;
     [SerializeField] protected float range;
-    [SerializeField] protected float size;
+    [SerializeField] protected Vector3 size; // Transform local scale
     [SerializeField] protected float speed; // Speed of movement in weapon (seperate from activation time).
 
 
     protected virtual void Start()
     {
+        size = transform.localScale;
         InvokeRepeating("Attack", timeBetweenActivations, timeBetweenActivations);
     }
 
@@ -36,6 +37,7 @@ public abstract class WeaponBase : MonoBehaviour
         damage += increaseAmount;
     }
 
+    // Decreases ActivationTime by given amount
     public void Upgrade_ActivationTime(float decreaseAmount)
     {
         float newTimeBetweenActivations = timeBetweenActivations - decreaseAmount;
@@ -58,7 +60,7 @@ public abstract class WeaponBase : MonoBehaviour
     /// <param name="scaleMultipler">Multiplier applied to weapon's transform.LocalScale.</param>
     public void Upgrade_Size(float scaleMultipler)
     {
-        transform.localScale *= scaleMultipler;
+        size *= scaleMultipler;
     }
 
     public void Upgrade_Speed(float increaseAmount)
